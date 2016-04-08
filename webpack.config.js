@@ -16,7 +16,8 @@ module.exports = {
      
     module: {
         loaders: [
-            {test: /\.css$/, loader: 'style-loader!css-loader'}
+            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {test: /\.js$/,loaders: ['babel?presets[]=es2015'],exclude: /node_modules/}
         ]
     },
     plugins: [commonsPlugin],

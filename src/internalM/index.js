@@ -1,8 +1,8 @@
-var avalon = require("avalon")
+const avalon = require("avalon")
 require("mmState")
 
 // 定义一个顶层的vmodel，用来放置全局共享数据
-var root = avalon.define({
+const root = avalon.define({
     $id : "root",
     footer : ''
 });
