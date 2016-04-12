@@ -1,5 +1,5 @@
-const avalon = require("avalon")
-require("mmState")
+import avalon from 'avalon';
+import 'mmState';
 
 // 定义一个顶层的vmodel，用来放置全局共享数据
 const root = avalon.define({
@@ -22,7 +22,7 @@ avalon.state("home", {
             controllerProvider  : function(){
                 return new Promise(function (rs) {
                     require.ensure([], function (tt) {
-                        require(["./home/home.js"], function($ctrl) {
+                        require(["./home/home.es6"], function($ctrl) {
                             rs($ctrl)
                         })
                     })
@@ -49,7 +49,7 @@ avalon.state("home", {
             controllerProvider  : function(){
                 return new Promise(function (rs) {
                     require.ensure([], function (tt) {
-                        require(["./personCenter/personCenter.js"], function($ctrl) {
+                        require(["./personCenter/personCenter.es6"], function($ctrl) {
                             rs($ctrl)
                         })
                     })

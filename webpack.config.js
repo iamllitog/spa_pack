@@ -5,7 +5,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
  
 module.exports = {
     entry: {
-        index: './src/internalM/index'
+        index: './src/internalM/index.es6'
     },
     output: {
         path: path.join(__dirname, "dist"), 
@@ -17,7 +17,7 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.(css|scss|sass)$/, loader: 'style!css!sass'},
-            {test: /\.js$/,loaders: ['babel?presets[]=es2015'],exclude: /node_modules/}
+            {test: /\.es6$/,loaders: ['babel?presets[]=es2015'],exclude: /node_modules/}
         ]
     },
     plugins: [commonsPlugin],
