@@ -2,6 +2,8 @@ var webpack = require("webpack");
  
 var path = require("path");
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+
+console.log('style!css!sass?includePaths[]=' + path.join(__dirname, './node_modules/compass-mixins/lib'));
  
 module.exports = {
     entry: {
@@ -16,8 +18,9 @@ module.exports = {
      
     module: {
         loaders: [
-            {test: /\.(css|scss|sass)$/, loader: 'style!css!sass'},
-            {test: /\.es6$/,loaders: ['babel?presets[]=es2015'],exclude: /node_modules/}
+            {test: /\.(css|scss|sass)$/, loader: 'style!css!sass?includePaths[]=' + path.join(__dirname, './node_modules/compass-mixins/lib')},
+            {test: /\.es6$/,loaders: ['babel?presets[]=es2015'],exclude: /node_modules/},
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
     plugins: [commonsPlugin],
