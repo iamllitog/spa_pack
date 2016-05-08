@@ -64,7 +64,7 @@ avalon.state("home", {
 })
 avalon.state.config({
     onError: function() {
-        console.log(arguments)
+        console.error(arguments)
     } // 强烈打开错误配置
 })
 avalon.history.start();

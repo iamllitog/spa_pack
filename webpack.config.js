@@ -2,6 +2,7 @@ var webpack = require("webpack");
  
 var path = require("path");
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+var StateUrlCompilationPlugin = require('./StateUrlCompilationPlugin');
 
 console.log('style!css!sass?includePaths[]=' + path.join(__dirname, './node_modules/compass-mixins/lib'));
  
@@ -27,7 +28,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', "", ".css"],
         alias: {
-            avalon: path.join(__dirname, 'src/externalM/avalon.mobile.shim'),
+            avalon: path.join(__dirname, 'src/externalM/avalon'),
+            '../avalon': path.join(__dirname, 'src/externalM/avalon'),
             mmState : path.join(__dirname, 'src/externalM/mmState')
         }
     }
