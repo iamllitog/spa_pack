@@ -35,10 +35,10 @@ avalon.state("home", {
             } // 指定一个返回字符串的函数来获取模板
         }
     }
-}).state("personCenter",{
-    url : "/personCenter",
+}).state("home.personCenter",{
+    url : "personCenter",
     views : {
-      "content": {
+      "content@": {
             templateProvider: function () {
                 return new Promise(function (rs) {
                     require.ensure([], function (tt) {
@@ -55,10 +55,6 @@ avalon.state("home", {
                     })
                 })
             }
-        },"footer": { // 视图名字的语法请仔细查阅文档
-            template: function() {
-                return "<div style='text-align:center;'>fsad</div>"
-            } // 指定一个返回字符串的函数来获取模板
         }
     }
 })

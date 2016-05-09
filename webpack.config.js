@@ -27,7 +27,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', "", ".css"],
         alias: {
-            avalon: path.join(__dirname, 'src/externalM/avalon.mobile.shim'),
+            avalon: path.join(__dirname, 'src/externalM/avalon'),
             mmState : path.join(__dirname, 'src/externalM/mmState')
         }
     }
